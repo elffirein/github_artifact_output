@@ -35,6 +35,7 @@ jobs:
             dist
             package.json
       - name: Publish JS file name
+        id: publish
         run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
   deploy:
     needs: build
